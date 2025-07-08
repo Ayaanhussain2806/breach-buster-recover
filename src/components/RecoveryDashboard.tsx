@@ -77,7 +77,7 @@ const RecoveryDashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-slate-400 text-sm">Recovery Time Objective</p>
-                <p className="text-2xl font-bold text-white">< 4 hrs</p>
+                <p className="text-2xl font-bold text-white">{'< 4 hrs'}</p>
               </div>
               <Clock className="w-8 h-8 text-blue-400" />
             </div>
@@ -89,7 +89,7 @@ const RecoveryDashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-slate-400 text-sm">Recovery Point Objective</p>
-                <p className="text-2xl font-bold text-white">< 1 hr</p>
+                <p className="text-2xl font-bold text-white">{'< 1 hr'}</p>
               </div>
               <Database className="w-8 h-8 text-green-400" />
             </div>
@@ -123,9 +123,7 @@ const RecoveryDashboard = () => {
               <div key={index} className="bg-slate-900/50 rounded-lg p-4 space-y-2">
                 <div className="flex items-center justify-between">
                   <h5 className="text-white font-medium">{source.name}</h5>
-                  <Badge className={`${
-                    source.status === 'healthy' ? 'bg-green-600' : 'bg-red-600'
-                  } text-white`}>
+                  <Badge className={source.status === 'healthy' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'}>
                     {source.status}
                   </Badge>
                 </div>
@@ -176,11 +174,11 @@ const RecoveryDashboard = () => {
                     {job.status === 'completed' && <CheckCircle className="w-4 h-4 text-green-400" />}
                     {job.status === 'running' && <AlertCircle className="w-4 h-4 text-blue-400 animate-pulse" />}
                     {job.status === 'pending' && <Clock className="w-4 h-4 text-slate-400" />}
-                    <Badge className={`${
-                      job.status === 'completed' ? 'bg-green-600' :
-                      job.status === 'running' ? 'bg-blue-600' :
-                      'bg-slate-600'
-                    } text-white`}>
+                    <Badge className={
+                      job.status === 'completed' ? 'bg-green-600 text-white' :
+                      job.status === 'running' ? 'bg-blue-600 text-white' :
+                      'bg-slate-600 text-white'
+                    }>
                       {job.status}
                     </Badge>
                   </div>

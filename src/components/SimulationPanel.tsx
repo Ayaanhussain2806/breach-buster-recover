@@ -54,12 +54,12 @@ const SimulationPanel = () => {
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-slate-300">Current Phase:</span>
-              <Badge className={`${
-                simulationState.phase === 'idle' ? 'bg-slate-600' :
-                simulationState.phase === 'recovered' ? 'bg-green-600' :
-                simulationState.phase === 'recovery' ? 'bg-blue-600' :
-                'bg-red-600'
-              } text-white`}>
+              <Badge className={
+                simulationState.phase === 'idle' ? 'bg-slate-600 text-white' :
+                simulationState.phase === 'recovered' ? 'bg-green-600 text-white' :
+                simulationState.phase === 'recovery' ? 'bg-blue-600 text-white' :
+                'bg-red-600 text-white'
+              }>
                 <PhaseIcon className="w-3 h-3 mr-1" />
                 {simulationState.phase.replace('_', ' ').toUpperCase()}
               </Badge>
@@ -187,12 +187,12 @@ const SimulationPanel = () => {
               
               <div className="flex justify-between items-center">
                 <span className="text-slate-400 text-sm">RTO Target</span>
-                <span className="text-slate-200 text-sm">< 4 hours</span>
+                <span className="text-slate-200 text-sm">{'< 4 hours'}</span>
               </div>
               
               <div className="flex justify-between items-center">
                 <span className="text-slate-400 text-sm">RPO Target</span>
-                <span className="text-slate-200 text-sm">< 1 hour</span>
+                <span className="text-slate-200 text-sm">{'< 1 hour'}</span>
               </div>
               
               <div className="flex justify-between items-center">
